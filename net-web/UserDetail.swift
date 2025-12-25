@@ -46,9 +46,15 @@ struct UserDetail: View {
             }
         }
         .onAppear {
-            withAnimation(.spring(response: 0.9, dampingFraction: 0.8)) {
+            withAnimation(.snappy) {
                 isAnimating = true
             }
+        }
+        .overlay{
+            LinearGradient(stops: [
+                Gradient.Stop(color: .black.opacity(0.1), location: 0.5),
+                Gradient.Stop(color: .yellow.opacity(0.6), location: 1)
+            ], startPoint: .top, endPoint: .bottom)
         }
     }
 }
