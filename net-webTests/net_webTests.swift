@@ -16,7 +16,7 @@ class UserTests: XCTestCase {
         
     }
     func testUserName() {
-        let user = User(id: 0, name: "Bret", username: "", email: "", address: Address(street: "", suite: "", city: "", zipcode: "", geo: Geo(lat: "", lng: "")), phone: "", website: "", company: Company(name: "", catchPhrase: "", bs: ""))
+        let user = User(id: 0, name: "dor", username: "", email: "", address: Address(street: "", suite: "", city: "", zipcode: "", geo: Geo(lat: "", lng: "")), phone: "", website: "", company: Company(name: "", catchPhrase: "", bs: ""))
         XCTAssertEqual(user.name, "Bret")
     }
     func testUserEmail() {
