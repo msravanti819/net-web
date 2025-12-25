@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct UserCell: View {
+    var user: User
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack() {
+            Text(user.name)
+                .font(.footnote)
+                .fontWeight(.semibold)
+                .padding()
+                .clipShape(.capsule)
+            VStack {
+                Text(user.email)
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .padding()
+                Text(user.username)
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .padding()
+            }
+            Divider()
+        }
+        .background(Color(.systemGray6))
     }
 }
 
 #Preview {
-    UserCell()
+    UserCell(user: User(id: 0, name: "", username: "", email: "", address: Address(street: "", suite: "", city: "", zipcode: "", geo: Geo(lat: "", lng: "")), phone: "", website: "", company: Company(name: "", catchPhrase: "", bs: "")))
 }

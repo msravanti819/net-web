@@ -8,17 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = UserViewModel()
+    @State private var isNavigate = false
+    
+    let arr = [1,2,3,4,5]
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+                    List(viewModel.users) { user in
+                        NavigationLink {
+                            UserDetail(user: user)
+                        } label: {
+                            UserCell(user: user)
+                        }
+            }
+            .navigationTitle("Users")
+            .font(.largeTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "minus")
+                    }
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }
