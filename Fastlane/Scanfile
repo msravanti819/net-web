@@ -1,0 +1,11 @@
+# For more information about this configuration visit
+# https://github.com/fastlane/scan#scanfile
+
+workspace "net-web.xcodeproj/project.xcworkspace"
+scheme "net-web"
+sdk "iphonesimulator"
+device "iPhone 17 Pro"
+code_coverage true
+xcargs '-parallelizeTargets'
+prelaunch_simulator true
+derived_data_path "Build/"
