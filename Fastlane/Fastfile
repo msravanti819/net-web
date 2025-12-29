@@ -6,10 +6,14 @@ platform :ios do
     lane :unit_test do |options|
       scan(
         clean: options[:clean],
+
         skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution],
       
         device: "iPhone 15",
       
+
+        skip_package_dependencies_resolution: options[:skip_package_dependencies_resolution]
+
       )
     end
 end
